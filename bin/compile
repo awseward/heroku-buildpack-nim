@@ -29,7 +29,7 @@ NIMBLE_BIN=$NIMBLE_DIR/bin/nimble
 PATH="$NIM_DIR/bin:$NIMBLE_DIR/bin:$PATH"
 export PATH
 
-export "NIMBLE_FLAGS=$(cat "${ENV_DIR}/${NIMBLE_FLAGS}")"
+export "NIMBLE_FLAGS=$(cat "${ENV_DIR}/NIMBLE_FLAGS")"
 echo "NIMBLE_FLAGS: ${NIMBLE_FLAGS}"
 
 mkdir -p $HOME/.config/nimble
