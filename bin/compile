@@ -58,4 +58,4 @@ fi
 
 echo "Building app" | arrow
 cd $BUILD_DIR
-$NIMBLE_BIN build --accept
+echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
