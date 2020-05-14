@@ -29,9 +29,6 @@ NIMBLE_BIN=$NIMBLE_DIR/bin/nimble
 PATH="$NIM_DIR/bin:$NIMBLE_DIR/bin:$PATH"
 export PATH
 
-export "NIMBLE_FLAGS=$(cat "${ENV_DIR}/NIMBLE_FLAGS")"
-echo "NIMBLE_FLAGS: ${NIMBLE_FLAGS}"
-
 mkdir -p $HOME/.config/nimble
 cat <<EOF > $HOME/.config/nimble/nimble.ini
 nimbleDir = r"$NIMBLE_DIR"
@@ -58,10 +55,8 @@ if [ ! -x $NIMBLE_BIN ]; then
     $NIM_BIN c -r src/nimble install -y
 fi
 
+export "NIMBLE_FLAGS=$(cat_or "${ENV_DIR}/NIMBLE_FLAGS" "")"
 
 echo "Building app" | arrow
 cd $BUILD_DIR
-
-ls -lah "${ENV_DIR}"
-
 echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
