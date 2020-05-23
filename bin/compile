@@ -64,6 +64,8 @@ fi
 
 export "NIMBLE_FLAGS=$(cat_or "${ENV_DIR}/NIMBLE_FLAGS" "")"
 
+export "IS_HEROKU=$(cat_or "${ENV_DIR}/IS_HEROKU" "")"
+
 echo "Building app" | arrow
 cd $BUILD_DIR
 
