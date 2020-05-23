@@ -40,12 +40,13 @@ EOF
 
 if [ ! -x $NIM_BIN ]; then
     nim_repo=$(cat_or $ENV_DIR/NIM_REPO "git://github.com/nim-lang/Nim.git")
-    nim_branch=$(cat_or $ENV_DIR/NIM_BRANCH "master")
+    nim_branch=$(cat_or $ENV_DIR/NIM_BRANCH "devel")
 
     echo "Installing Nim..." | arrow
 
     git clone --depth 1 --branch $nim_branch $nim_repo $NIM_DIR
     cd $NIM_DIR
+    git checkout dc3919bb1af89799e391b4c4ecd0f1f60f7862ff
     sh build_all.sh
 
     echo "using ${nim_repo} @${nim_branch}" | indent
