@@ -29,6 +29,10 @@ NIMBLE_BIN=$NIMBLE_DIR/bin/nimble
 PATH="$NIM_DIR/bin:$NIMBLE_DIR/bin:$PATH"
 export PATH
 
+echo "AAAAAAAAAAAAAAAAAAA"
+git -C "${NIM_DIR}" show HEAD
+echo "AAAAAAAAAAAAAAAAAAA"
+
 mkdir -p $HOME/.config/nimble
 cat <<EOF > $HOME/.config/nimble/nimble.ini
 nimbleDir = r"$NIMBLE_DIR"
