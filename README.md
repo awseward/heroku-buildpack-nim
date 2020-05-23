@@ -76,6 +76,11 @@ You can use the most recent development version this way:
 heroku config:set NIM_BRANCH=devel
 ```
 
+If you should need to get more specific than just referencing a branch, you can provide a commit SHA this way:
+```shell
+heroku config:set NIM_REV=dc3919bb1af89799e391b4c4ecd0f1f60f7862ff
+```
+
 
 Example
 -------
