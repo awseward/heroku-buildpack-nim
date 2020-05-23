@@ -46,6 +46,7 @@ if [ ! -x $NIM_BIN ]; then
 
     git clone --depth 1 --branch $nim_branch $nim_repo $NIM_DIR
     cd $NIM_DIR
+    git fetch origin dc3919bb1af89799e391b4c4ecd0f1f60f7862ff
     git checkout dc3919bb1af89799e391b4c4ecd0f1f60f7862ff
     sh build_all.sh
 
