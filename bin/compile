@@ -67,7 +67,6 @@ export "NIMBLE_FLAGS=$(cat_or "${ENV_DIR}/NIMBLE_FLAGS" "")"
 echo "Building app" | arrow
 cd $BUILD_DIR
 
-( echo 'svelte' | xargs -t $NIMBLE_BIN ) || true
 ( echo 'assets' | xargs -t $NIMBLE_BIN ) || true
 
 echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
