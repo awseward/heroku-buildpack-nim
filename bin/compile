@@ -30,7 +30,7 @@ PATH="$NIM_DIR/bin:$NIMBLE_DIR/bin:$PATH"
 export PATH
 
 echo "AAAAAAAAAAAAAAAAAAA"
-git -C "${NIM_DIR}" show HEAD
+git -C "${NIM_DIR}" show HEAD || true
 echo "AAAAAAAAAAAAAAAAAAA"
 
 mkdir -p $HOME/.config/nimble
