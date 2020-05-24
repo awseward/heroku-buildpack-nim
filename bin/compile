@@ -68,9 +68,11 @@ export "IS_HEROKU=$(cat_or "${ENV_DIR}/IS_HEROKU" "")"
 
 echo "${NIMBLE_DIR}/bin" | xargs -t ls -lah
 
-# echo "Building app" | arrow
-# cd $BUILD_DIR
+echo "Building app" | arrow
+cd "${BUILD_DIR}"
 
-# ( echo 'assets' | xargs -t $NIMBLE_BIN ) || true
+"${NIMBLE_BIN}" install --accept
 
-# echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
+( echo 'assets' | xargs -t $NIMBLE_BIN ) || true
+
+echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
