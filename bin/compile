@@ -71,7 +71,7 @@ echo "${NIMBLE_DIR}/bin" | xargs -t ls -lah
 echo "Building app" | arrow
 cd "${BUILD_DIR}"
 
-"${NIMBLE_BIN}" install --accept
+"${NIMBLE_BIN}" install nimassets --accept
 
 ( echo 'assets' | xargs -t $NIMBLE_BIN ) || true
 
