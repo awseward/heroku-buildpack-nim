@@ -71,6 +71,12 @@ cd "${BUILD_DIR}"
 
 echo '--accept' | xargs -t "${NIMBLE_BIN}" install nimassets
 
+# TEST
+echo '--accept' | xargs -t "${NIMBLE_BIN}" install --accept
+mkdir -p ./.bin
+cp "${NIMBLE_DIR}/bin/heroku_database_url_splitter" ./.bin
+# TSET
+
 echo 'assets' | xargs -t $NIMBLE_BIN || true
 
 echo '--accept' | xargs -t $NIMBLE_BIN $NIMBLE_FLAGS build
