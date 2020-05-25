@@ -72,7 +72,7 @@ cd "${BUILD_DIR}"
 echo '--accept' | xargs -t "${NIMBLE_BIN}" install nimassets
 
 # TEST
-echo '--accept' | xargs -t "${NIMBLE_BIN}" install --accept
+echo '--accept' | xargs -t "${NIMBLE_BIN}" heroku
 mkdir -p ./.bin
 cp "${NIMBLE_DIR}/bin/heroku_database_url_splitter" ./.bin
 # TSET
