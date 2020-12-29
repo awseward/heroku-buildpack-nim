@@ -69,4 +69,4 @@ export "IS_HEROKU=$(cat_or "${ENV_DIR}/IS_HEROKU" "")"
 echo "Building app" | arrow
 cd "${BUILD_DIR}"
 echo heroku_build | xargs -t "${NIMBLE_BIN}" || true
-echo 'build' | xargs -t "${NIMBLE_BIN}" $NIMBLE_FLAGS --accept
+echo "build $(cat_or "$ENV_DIR/APP_NIMBLE_BIN" '')" | xargs -t "${NIMBLE_BIN}" $NIMBLE_FLAGS --accept
