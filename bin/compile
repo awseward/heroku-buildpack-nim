@@ -34,7 +34,7 @@ cat <<EOF > $HOME/.config/nimble/nimble.ini
 nimbleDir = r"$NIMBLE_DIR"
 EOF
 
-if [ ! -x $NIM_BIN ]; then
+# if [ ! -x $NIM_BIN ]; then
     nim_repo=$(cat_or $ENV_DIR/NIM_REPO "git://github.com/nim-lang/Nim.git")
     nim_branch=$(cat_or $ENV_DIR/NIM_BRANCH 'devel')
     nim_rev="$(cat_or "${ENV_DIR}/NIM_REV" '')"
@@ -52,7 +52,7 @@ if [ ! -x $NIM_BIN ]; then
     sh build_all.sh
 
     echo "using ${nim_repo} @${nim_branch}" | indent
-fi
+# fi
 
 if [ ! -x $NIMBLE_BIN ]; then
     echo "Installing Nimble..." | arrow
